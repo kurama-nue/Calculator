@@ -1,19 +1,21 @@
-function add(a, b) {
-    return a + b;
+let result = document.getElementById("inputtext");
+
+let calculate = (number) => {
+  result.value = result.value + number;
+};
+
+let calculateResult = () => {
+  try {
+    result.value = eval(result.value);
+  } catch (err) {
+    alert("Enter valid input");
+  }
+};
+
+function clr() {
+  result.value = "";
 }
 
-function subtract(a, b) {
-    return a - b;
-}
-
-function multiply(a, b) {
-    return a * b;
-}
-
-function divide(a, b) {
-    if(b == 0) {
-        return 'Error! Division by zero is undefined';
-    } else {
-        return a / b;
-    }
+function del() {
+  result.value = result.value.slice(0, -1);
 }
